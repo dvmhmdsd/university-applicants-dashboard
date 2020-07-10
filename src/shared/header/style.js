@@ -1,6 +1,6 @@
 import COLORS from "globals/style-constants";
 
-export default (theme) => ({
+export default (theme, lang) => ({
   root: {
     flexGrow: 1,
   },
@@ -12,10 +12,14 @@ export default (theme) => ({
   avatarBg: {
     backgroundColor: COLORS.SEC_TEXT,
   },
+  avatar__item: {
+    order: lang === "en" ? 3 : 1
+  },
   btn__wrapper: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
+    order: lang === "en" ? 1 : 3
   },
   mail__link: {
     color: COLORS.MAIN_TEXT,
@@ -38,5 +42,6 @@ export default (theme) => ({
   title: {
     flexGrow: 1,
     textAlign: "center",
+    order: 2,
   },
 });

@@ -13,10 +13,11 @@ import Container from "@material-ui/core/Container";
 import placeholder from "assets/placeholder.png";
 import logo from "assets/logo.png";
 
-import headerStyle from "./style";
+import styleHeader from "./style";
 
 function Header(props) {
-  const useStyles = makeStyles(headerStyle);
+  console.log(props.lang)
+  const useStyles = makeStyles((theme) => styleHeader(theme, props.lang.key));
   const classes = useStyles();
 
   const changeLanguage = (key) => props.setLanguageKey(key);
@@ -57,7 +58,7 @@ function Header(props) {
                 <img src={logo} alt="" />
               </a>
             </Typography>
-            <Button disableElevation>
+            <Button className={classes.avatar__item} disableElevation>
               <Avatar src={placeholder} className={classes.avatarBg} />
             </Button>
           </Toolbar>
