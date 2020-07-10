@@ -1,4 +1,4 @@
-import { GET_STUDENTS, FILTER_STUDENTS } from "state-management/constants";
+import { GET_STUDENTS } from "state-management/constants";
 
 let initialState = {
   list: [],
@@ -11,11 +11,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         list: action.payload,
-      };
-    case FILTER_STUDENTS:
-      return {
-        ...state,
-        filterKey: action.payload,
       };
     default:
       return state;
