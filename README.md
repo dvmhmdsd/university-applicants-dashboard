@@ -19,3 +19,4 @@ The app is built with `React`, `Redux` and `Material UI`.
 4. `pages` folder contains all the pages and components that contains the business logic of every UI component.
 5. `components` folder contains all the custom components.
 6. `helpers` folder contains all the helper functions that's used across the application.
+7. `globals` folder contains all the global configurations of the application.
