@@ -18,3 +18,4 @@ The app is built with `React`, `Redux` and `Material UI`.
 3. `shared` folder contains all the components which are shared across the application.
 4. `pages` folder contains all the pages and components that contains the business logic of every UI component.
 5. `components` folder contains all the custom components.
+6. `helpers` folder contains all the helper functions that's used across the application.

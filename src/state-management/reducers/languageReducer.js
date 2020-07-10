@@ -1,7 +1,8 @@
 import { GET_LANGUAGE, SET_LANGUAGE } from "state-management/constants";
+import { returnLanguageKey } from "helpers/language";
 
 let initialState = {
-  key: JSON.parse(localStorage.getItem("lang")) || "en",
+  key: returnLanguageKey(),
 };
 
 export default (state = initialState, action) => {

@@ -1,9 +1,8 @@
-import detectBrowserLanguage from "detect-browser-language";
+import { returnLanguageKey } from "helpers/language";
 import translation from "./translation.json";
 
 export const translate = (key) => {
-  let lang =
-    JSON.parse(localStorage.getItem("lang")) || detectBrowserLanguage() || "en";
+  let lang = returnLanguageKey();
 
   return translation[lang][key];
 };
