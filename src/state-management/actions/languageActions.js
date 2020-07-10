@@ -12,6 +12,8 @@ export const getLanguageKey = () => (dispatch) => {
 };
 
 export const setLanguageKey = (key) => (dispatch) => {
+  localStorage.setItem("lang", key);
+
   dispatch({
     type: SET_LANGUAGE,
     payload: key,
