@@ -9,7 +9,7 @@ This is a simple application that represents data about students in the universi
 
 ## Dependencies
 
-The app is built with `React`, `Redux`, `i18n` and `Material UI`.
+The app is built with `React`, `Redux` and `Material UI`.
 
 ## Structure
 
@@ -17,3 +17,4 @@ The app is built with `React`, `Redux`, `i18n` and `Material UI`.
 2. `state-management` folder contains all the `actions`, `reducers` and anything related to the state management with `Redux`.
 3. `shared` folder contains all the components which are shared across the application.
 4. `pages` folder contains all the pages and components that contains the business logic of every UI component.
+5. `components` folder contains all the custom components.
