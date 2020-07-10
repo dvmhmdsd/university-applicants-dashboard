@@ -13,49 +13,10 @@ import Container from "@material-ui/core/Container";
 import placeholder from "assets/placeholder.png";
 import logo from "assets/logo.png";
 
-import COLORS from "globals/style-constants";
+import headerStyle from "./style";
 
 function Header(props) {
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-    },
-    header: {
-      color: COLORS.MAIN_TEXT,
-      backgroundColor: COLORS.MAIN_BG,
-      padding: "0.7rem 0 0.3rem"
-    },
-    avatarBg: {
-      backgroundColor: COLORS.SEC_TEXT,
-    },
-    btn__wrapper: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-around"
-    },
-    mail__link: {
-      color: COLORS.MAIN_TEXT,
-      textDecoration: "none",
-      display: "block",
-      marginTop: "0.6rem"
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    btnLight: {
-      backgroundColor: COLORS.SEC_TEXT,
-      color: COLORS.MAIN_BG,
-      marginRight: "0.8rem",
-    },
-    btnDark: {
-      backgroundColor: COLORS.MAIN_TEXT,
-      color: COLORS.MAIN_BG,
-    },
-    title: {
-      flexGrow: 1,
-      textAlign: "center",
-    },
-  }));
+  const useStyles = makeStyles(headerStyle);
   const classes = useStyles();
 
   const changeLanguage = (key) => props.setLanguageKey(key);
@@ -84,7 +45,12 @@ function Header(props) {
                   EN
                 </Button>
               </div>
-              <a href="mailto:contactus@mcst.edu.sa" className={classes.mail__link}>contactus@mcst.edu.sa</a>
+              <a
+                href="mailto:contactus@mcst.edu.sa"
+                className={classes.mail__link}
+              >
+                contactus@mcst.edu.sa
+              </a>
             </section>
             <Typography variant="h6" className={classes.title}>
               <a href="/">
