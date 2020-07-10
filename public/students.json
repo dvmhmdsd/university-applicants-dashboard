@@ -1,42 +1,42 @@
 [
   {
     "email": "person1@gmail.com",
-    "status": "Initial Acceptance",
-    "major": "Medicine"
+    "status": "initial acceptance",
+    "major": "medicine"
   },
   {
     "email": "person2@gmail.com",
-    "status": "Conditional Acceptance",
-    "major": "Medicine"
+    "status": "Conditional acceptance",
+    "major": "medicine"
   },
   {
     "email": "person3@gmail.com",
-    "status": "Conditional Acceptance",
-    "major": "Medicine"
+    "status": "conditional acceptance",
+    "major": "medicine"
   },
   {
     "email": "person4@gmail.com",
-    "status": "Initial Acceptance",
-    "major": "Medicine"
+    "status": "initial acceptance",
+    "major": "medicine"
   },
   {
     "email": "person5@gmail.com",
-    "status": "Rejected",
-    "major": "Medicine"
+    "status": "rejected",
+    "major": "medicine"
   },
   {
     "email": "person6@gmail.com",
-    "status": "Under Review",
-    "major": "Medicine"
+    "status": "under review",
+    "major": "medicine"
   },
   {
     "email": "person7@gmail.com",
-    "status": "Rejected",
-    "major": "Medicine"
+    "status": "rejected",
+    "major": "medicine"
   },
   {
     "email": "person8@gmail.com",
-    "status": "Under Review",
-    "major": "Medicine"
+    "status": "under review",
+    "major": "medicine"
   }
 ]

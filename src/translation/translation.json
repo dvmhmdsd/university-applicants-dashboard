@@ -1,4 +1,28 @@
 {
-  "en": {},
-  "ar": {}
+  "en": {
+    "name": "name",
+    "status": "status",
+    "major": "major",
+    "students": "students",
+    "dates": "dates",
+    "sign out": "sign out",
+    "all": "all",
+    "under review": "under review",
+    "initial acceptance": "initial acceptance",
+    "conditional acceptance": "conditional acceptance",
+    "rejected": "rejected"
+  },
+  "ar": {
+    "name": "الإسم",
+    "status": "الحالة",
+    "major": "التخصص",
+    "students": "الطلاب",
+    "dates": "التواريخ",
+    "sign out": "تسجيل الخروج",
+    "all": "all",
+    "under review": "قيد المراجعة",
+    "initial acceptance": "مقبول بشكل مبدأى",
+    "conditional acceptance": "مقبول بشروط",
+    "rejected": "مرفوض"
+  }
 }
