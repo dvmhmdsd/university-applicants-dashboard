@@ -6,5 +6,5 @@ import studentsReducer from "./studentsReducer";
 export default combineReducers({
   students: studentsReducer,
   mode: modeReducer,
-  langKey: languageReducer,
+  lang: languageReducer,
 });
