@@ -9,6 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Avatar from "@material-ui/core/Avatar";
 import Container from "@material-ui/core/Container";
+import Link from '@material-ui/core/Link';
 
 import placeholder from "assets/placeholder.png";
 import logo from "assets/logo.png";
@@ -16,7 +17,6 @@ import logo from "assets/logo.png";
 import styleHeader from "./style";
 
 function Header(props) {
-  console.log(props.lang)
   const useStyles = makeStyles((theme) => styleHeader(theme, props.lang.key));
   const classes = useStyles();
 
@@ -46,12 +46,13 @@ function Header(props) {
                   EN
                 </Button>
               </div>
-              <a
+              <Link
                 href="mailto:contactus@mcst.edu.sa"
                 className={classes.mail__link}
+                color="inherit"
               >
                 contactus@mcst.edu.sa
-              </a>
+              </Link>
             </section>
             <Typography variant="h6" className={classes.title}>
               <a href="/">
