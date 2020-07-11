@@ -104,7 +104,7 @@ export default function ApplicantsTable({ applicants, filterKey, lang }) {
                 className={classes.table__cell}
               >
                 <PersonIcon
-                  style={{ color: COLORS.SEC_TEXT, marginRight: "0.6rem", position: "relative", top: "0.5rem" }}
+                  style={{ color: COLORS.SEC_TEXT, margin: "0 0.6rem", position: "relative", top: "0.5rem" }}
                   fontSize="large"
                 />
                 <p className={classes.cell__text}>{row.name}</p>
