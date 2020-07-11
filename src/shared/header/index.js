@@ -10,6 +10,7 @@ import Button from "@material-ui/core/Button";
 import Avatar from "@material-ui/core/Avatar";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import placeholder from "assets/placeholder.png";
 import logo from "assets/logo.png";
@@ -78,7 +79,7 @@ function Header({ lang, setLanguageKey }) {
               disableElevation
               onClick={() => setDrawerStatus(true)}
             >
-              <Avatar src={placeholder} className={classes.avatarBg} />
+              <AccountCircleIcon fontSize="large" color="primary" />
             </Button>
           </Toolbar>
         </Container>
