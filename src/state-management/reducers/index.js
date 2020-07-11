@@ -3,6 +3,6 @@ import languageReducer from "./languageReducer";
 import applicantsReducer from "./applicantsReducer";
 
 export default combineReducers({
-  students: applicantsReducer,
+  applicants: applicantsReducer,
   lang: languageReducer,
 });
