@@ -1,13 +1,13 @@
-import { GET_STUDENTS } from "state-management/constants";
+import { GET_APPLICANTS } from "state-management/types-constants";
 
-export const getStudents = () => (dispatch) => {
-  fetchStudents().then((students) =>
+export const getApplicants = () => (dispatch) => {
+  fetchApplicants().then((applicants) =>
     dispatch({
-      type: GET_STUDENTS,
-      payload: students,
+      type: GET_APPLICANTS,
+      payload: applicants,
     })
   );
 };
 
-const fetchStudents = () =>
-  fetch("./students.json").then((response) => response.json());
+const fetchApplicants = () =>
+  fetch("./applicants.json").then((response) => response.json());

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
@@ -8,8 +8,15 @@ import Box from "@material-ui/core/Box";
 import COLORS from "globals/style-constants";
 
 import { connect } from "react-redux";
+import { getApplicants } from "state-management/actions/applicantsActions";
+import ApplicantsTable from "shared/table";
+import { translate } from "translation/translate";
 
-function Applicants({ applicants }) {
+function Applicants({ applicants, getApplicants, lang }) {
+  useEffect(() => {
+    getApplicants();
+  }, []);
+
   const useStyles = makeStyles((theme) => ({
     root: {
       backgroundColor: theme.palette.background.paper,
@@ -19,6 +26,7 @@ function Applicants({ applicants }) {
       boxShadow: "0 0 2px 2px #ccc",
     },
     tabs__bar: {
+      //   flexDirection: lang === "ar" ? "row-reverse" : "row",
       backgroundColor: COLORS.MAIN_BG,
       color: COLORS.MAIN_TEXT,
       boxShadow: "none",
@@ -33,11 +41,11 @@ function Applicants({ applicants }) {
   };
 
   const statuses = [
-    "All",
-    "under review",
-    "initial acceptance",
-    "conditional acceptance",
-    "rejected",
+    translate("all"),
+    translate("under review"),
+    translate("initial acceptance"),
+    translate("conditional acceptance"),
+    translate("rejected"),
   ];
   return (
     <div className={classes.root}>
@@ -49,6 +57,7 @@ function Applicants({ applicants }) {
           indicatorColor="primary"
           textColor="primary"
           centered
+          dir={lang === "ar" ? "rtl" : "ltr"}
         >
           {statuses.map((status) => (
             <Tab label={status} key={status} />
@@ -56,8 +65,12 @@ function Applicants({ applicants }) {
         </Tabs>
       </AppBar>
       {statuses.map((status, index) => (
-        <TabPanel value={tabValue} index={index}>
-          {status}
+        <TabPanel value={tabValue} index={index} key={status}>
+          <ApplicantsTable
+            applicants={applicants}
+            filterKey={status !== translate("all") ? status : null}
+            lang={lang}
+          />
         </TabPanel>
       ))}
     </div>
@@ -75,7 +88,8 @@ function TabPanel(props) {
 }
 
 let mapStateToProps = (store) => ({
-  applicants: store.applicants,
+  applicants: store.applicants.list,
+  lang: store.lang.key,
 });
 
-export default connect(mapStateToProps)(Applicants);
+export default connect(mapStateToProps, { getApplicants })(Applicants);

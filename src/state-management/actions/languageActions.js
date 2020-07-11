@@ -1,4 +1,4 @@
-import { GET_LANGUAGE, SET_LANGUAGE } from "state-management/constants";
+import { GET_LANGUAGE, SET_LANGUAGE } from "state-management/types-constants";
 import { returnLanguageKey } from "helpers/language";
 
 export const getLanguageKey = () => (dispatch) => {

@@ -1,4 +1,4 @@
-import { GET_APPLICANTS } from "state-management/constants";
+import { GET_APPLICANTS } from "state-management/types-constants";
 
 let initialState = {
   list: [],
