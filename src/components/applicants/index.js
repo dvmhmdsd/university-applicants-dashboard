@@ -26,7 +26,6 @@ function Applicants({ applicants, getApplicants, lang }) {
       boxShadow: "0 0 2px 2px #ccc",
     },
     tabs__bar: {
-      //   flexDirection: lang === "ar" ? "row-reverse" : "row",
       backgroundColor: COLORS.MAIN_BG,
       color: COLORS.MAIN_TEXT,
       boxShadow: "none",
@@ -53,7 +52,7 @@ function Applicants({ applicants, getApplicants, lang }) {
         <Tabs
           value={tabValue}
           onChange={handleChange}
-          aria-label="Applicants data"
+          aria-label="Applicants statuses"
           indicatorColor="primary"
           textColor="primary"
           centered

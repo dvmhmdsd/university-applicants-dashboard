@@ -9,7 +9,10 @@ import TableFooter from "@material-ui/core/TableFooter";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
+import PersonIcon from "@material-ui/icons/Person";
+
+import "./style.css";
+import COLORS from "globals/style-constants";
 
 import TablePaginationActions from "./TablePaginationActions";
 import { translate } from "translation/translate";
@@ -18,6 +21,8 @@ export default function ApplicantsTable({ applicants, filterKey, lang }) {
   const useApplicantsTableStyles = makeStyles({
     table: {
       minWidth: 500,
+      boxShadow: "none",
+      marginTop: "1rem",
     },
     table__header: {
       textTransform: "capitalize",
@@ -25,10 +30,17 @@ export default function ApplicantsTable({ applicants, filterKey, lang }) {
     table__header__cell: {
       fontWeight: 600,
       fontSize: "1.4rem",
+      borderBottom: "none",
     },
     table__cell: {
       fontSize: "1.1rem",
       textTransform: "capitalize",
+      padding: "1.6rem 0",
+      borderBottom: "none",
+    },
+    cell__text: {
+      marginBottom: "0.2rem",
+      display: "inline-block",
     },
   });
   const classes = useApplicantsTableStyles();
@@ -53,7 +65,7 @@ export default function ApplicantsTable({ applicants, filterKey, lang }) {
   };
 
   return (
-    <TableContainer component={Paper} dir={lang === "ar" ? "rtl" : "ltr"}>
+    <TableContainer dir={lang === "ar" ? "rtl" : "ltr"}>
       <Table className={classes.table} aria-label="applicants table">
         <TableHead className={classes.table__header}>
           <TableRow>
@@ -91,7 +103,11 @@ export default function ApplicantsTable({ applicants, filterKey, lang }) {
                 align="center"
                 className={classes.table__cell}
               >
-                {row.name}
+                <PersonIcon
+                  style={{ color: COLORS.SEC_TEXT, marginRight: "0.6rem", position: "relative", top: "0.5rem" }}
+                  fontSize="large"
+                />
+                <p className={classes.cell__text}>{row.name}</p>
               </TableCell>
               <TableCell
                 style={{ width: 160 }}
@@ -111,7 +127,7 @@ export default function ApplicantsTable({ applicants, filterKey, lang }) {
           ))}
 
           {emptyRows > 0 && (
-            <TableRow style={{ height: 53 * emptyRows }}>
+            <TableRow style={{ padding: "1rem" }}>
               <TableCell colSpan={6} />
             </TableRow>
           )}
@@ -119,9 +135,10 @@ export default function ApplicantsTable({ applicants, filterKey, lang }) {
         <TableFooter>
           <TableRow>
             <TablePagination
+              style={{ marginTop: "3rem" }}
               rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
               colSpan={3}
-              count={applicants.length}
+              count={data.length}
               rowsPerPage={rowsPerPage}
               page={page}
               SelectProps={{
