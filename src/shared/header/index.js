@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { setLanguageKey } from "state-management/actions/languageActions";
 
@@ -9,18 +9,32 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Avatar from "@material-ui/core/Avatar";
 import Container from "@material-ui/core/Container";
-import Link from '@material-ui/core/Link';
+import Link from "@material-ui/core/Link";
 
 import placeholder from "assets/placeholder.png";
 import logo from "assets/logo.png";
 
 import styleHeader from "./style";
+import SideDrawer from "shared/drawer";
 
-function Header(props) {
-  const useStyles = makeStyles((theme) => styleHeader(theme, props.lang.key));
+function Header({ lang, setLanguageKey }) {
+  const useStyles = makeStyles((theme) => styleHeader(theme, lang.key));
   const classes = useStyles();
 
-  const changeLanguage = (key) => props.setLanguageKey(key);
+  const [drawerStatus, setDrawerStatus] = useState(false);
+
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setDrawerStatus(open);
+  };
+
+  const changeLanguage = (key) => setLanguageKey(key);
 
   return (
     <div className={classes.root}>
@@ -59,12 +73,22 @@ function Header(props) {
                 <img src={logo} alt="" />
               </a>
             </Typography>
-            <Button className={classes.avatar__item} disableElevation>
+            <Button
+              className={classes.avatar__item}
+              disableElevation
+              onClick={() => setDrawerStatus(true)}
+            >
               <Avatar src={placeholder} className={classes.avatarBg} />
             </Button>
           </Toolbar>
         </Container>
       </AppBar>
+
+      <SideDrawer
+        toggleDrawer={toggleDrawer}
+        openStatus={drawerStatus}
+        anchor={lang.key === "en" ? "right" : "left"}
+      />
     </div>
   );
 }

@@ -11,9 +11,10 @@ export default (theme, lang) => ({
   },
   avatarBg: {
     backgroundColor: COLORS.SEC_TEXT,
+    cursor: "pointer"
   },
   avatar__item: {
-    order: lang === "en" ? 3 : 1
+    order: lang === "en" ? 3 : 1,
   },
   btn__wrapper: {
     display: "flex",
@@ -38,6 +39,7 @@ export default (theme, lang) => ({
   btnDark: {
     backgroundColor: COLORS.MAIN_TEXT,
     color: COLORS.MAIN_BG,
+    cursor: "pointer"
   },
   title: {
     flexGrow: 1,
