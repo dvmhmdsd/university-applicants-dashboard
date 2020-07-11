@@ -1,12 +1,10 @@
 import React from "react";
-import Header from "shared/header";
-import Applicants from "components/applicants";
+import ApplicantsPage from "pages/applicants-page";
 
 function App() {
   return (
     <>
-      <Header />
-      <Applicants />
+      <ApplicantsPage />
     </>
   );
 }

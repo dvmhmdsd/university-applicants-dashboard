@@ -47,6 +47,7 @@ export default function ApplicantsTable({ applicants, filterKey, lang }) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
+  // To show only the users with the status in tabs
   let filteredApplicants = applicants.filter(
     (applicant) => translate(applicant.status) === filterKey
   );
@@ -104,7 +105,12 @@ export default function ApplicantsTable({ applicants, filterKey, lang }) {
                 className={classes.table__cell}
               >
                 <PersonIcon
-                  style={{ color: COLORS.SEC_TEXT, margin: "0 0.6rem", position: "relative", top: "0.5rem" }}
+                  style={{
+                    color: COLORS.SEC_TEXT,
+                    margin: "0 0.6rem",
+                    position: "relative",
+                    top: "0.5rem",
+                  }}
                   fontSize="large"
                 />
                 <p className={classes.cell__text}>{row.name}</p>

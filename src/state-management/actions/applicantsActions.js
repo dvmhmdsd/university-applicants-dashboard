@@ -9,5 +9,9 @@ export const getApplicants = () => (dispatch) => {
   );
 };
 
+/**
+ * Just return the data parsed then dispatch the action in the action creator above.
+ * The data are stored in a json file in the public folder to simulate asynchronous requests.
+ */
 const fetchApplicants = () =>
   fetch("./applicants.json").then((response) => response.json());

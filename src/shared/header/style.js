@@ -1,5 +1,6 @@
 import COLORS from "globals/style-constants";
 
+// Extract styles into separate file for organization
 export default (theme, lang) => ({
   root: {
     flexGrow: 1,
@@ -11,7 +12,7 @@ export default (theme, lang) => ({
   },
   avatarBg: {
     backgroundColor: COLORS.SEC_TEXT,
-    cursor: "pointer"
+    cursor: "pointer",
   },
   avatar__item: {
     order: lang === "en" ? 3 : 1,
@@ -20,7 +21,7 @@ export default (theme, lang) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
-    order: lang === "en" ? 1 : 3
+    order: lang === "en" ? 1 : 3,
   },
   mail__link: {
     color: COLORS.MAIN_TEXT,
@@ -39,7 +40,7 @@ export default (theme, lang) => ({
   btnDark: {
     backgroundColor: COLORS.MAIN_TEXT,
     color: COLORS.MAIN_BG,
-    cursor: "pointer"
+    cursor: "pointer",
   },
   title: {
     flexGrow: 1,

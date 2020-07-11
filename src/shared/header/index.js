@@ -7,12 +7,10 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import Avatar from "@material-ui/core/Avatar";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
-import placeholder from "assets/placeholder.png";
 import logo from "assets/logo.png";
 
 import styleHeader from "./style";
