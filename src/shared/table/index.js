@@ -20,7 +20,14 @@ export default function ApplicantsTable({ applicants, filterKey, lang }) {
       minWidth: 500,
     },
     table__header: {
-      fontWeight: 900,
+      textTransform: "capitalize",
+    },
+    table__header__cell: {
+      fontWeight: 600,
+      fontSize: "1.4rem",
+    },
+    table__cell: {
+      fontSize: "1.1rem",
       textTransform: "capitalize",
     },
   });
@@ -29,7 +36,7 @@ export default function ApplicantsTable({ applicants, filterKey, lang }) {
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   let filteredApplicants = applicants.filter(
-    (applicant) => applicant.status === filterKey
+    (applicant) => translate(applicant.status) === filterKey
   );
   let data = filterKey ? filteredApplicants : applicants;
 
@@ -50,13 +57,25 @@ export default function ApplicantsTable({ applicants, filterKey, lang }) {
       <Table className={classes.table} aria-label="applicants table">
         <TableHead className={classes.table__header}>
           <TableRow>
-            <TableCell style={{ width: 160 }} align="center">
+            <TableCell
+              style={{ width: 160 }}
+              align="center"
+              className={classes.table__header__cell}
+            >
               {translate("name")}
             </TableCell>
-            <TableCell style={{ width: 160 }} align="center">
+            <TableCell
+              style={{ width: 160 }}
+              align="center"
+              className={classes.table__header__cell}
+            >
               {translate("status")}
             </TableCell>
-            <TableCell style={{ width: 160 }} align="center">
+            <TableCell
+              style={{ width: 160 }}
+              align="center"
+              className={classes.table__header__cell}
+            >
               {translate("major")}
             </TableCell>
           </TableRow>
@@ -67,13 +86,25 @@ export default function ApplicantsTable({ applicants, filterKey, lang }) {
             : data
           ).map((row) => (
             <TableRow key={row.name}>
-              <TableCell style={{ width: 160 }} align="center">
+              <TableCell
+                style={{ width: 160 }}
+                align="center"
+                className={classes.table__cell}
+              >
                 {row.name}
               </TableCell>
-              <TableCell style={{ width: 160 }} align="center">
+              <TableCell
+                style={{ width: 160 }}
+                align="center"
+                className={classes.table__cell}
+              >
                 {row.status}
               </TableCell>
-              <TableCell style={{ width: 160 }} align="center">
+              <TableCell
+                style={{ width: 160 }}
+                align="center"
+                className={classes.table__cell}
+              >
                 {row.major}
               </TableCell>
             </TableRow>
